@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-In-One Web Tools | 100+ Free Online Tools</title>
+    <meta name="description" content="Free online tools for images, text, developers, SEO, calculators and more. 100+ tools in one place to make your work easier.">
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #6c757d;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--dark-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #6a11cb);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        
+        .tools-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .tool-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+        }
+        
+        .tool-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .tool-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .tool-card p {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .category-tab {
+            padding: 10px 20px;
+            margin: 0 5px 10px;
+            background-color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .category-tab:hover, .category-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .category-content {
+            display: none;
+        }
+        
+        .category-content.active {
+            display: block;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Web<span>Tools</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#image-tools">Image Tools</a></li>
+                    <li><a href="#text-tools">Text Tools</a></li>
+                    <li><a href="#developer-tools">Developer Tools</a></li>
+                    <li><a href="#seo-tools">SEO Tools</a></li>
+                    <li><a href="#calculators">Calculators</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>100+ Free Online Tools</h1>
+            <p>All the tools you need in one place. Free to use, no registration required.</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search for tools...">
+                <button>Search</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tools-section" id="image-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Image Tools</h2>
+                <p>Edit, convert and optimize your images with our free online tools</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🖼️</div>
+                        <h3>Image Resizer</h3>
+                        <p>Resize your images to any dimensions while maintaining quality</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔄</div>
+                        <h3>Image Converter</h3>
+                        <p>Convert between JPG, PNG, GIF, WEBP and other formats</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🗜️</div>
+                        <h3>Image Compressor</h3>
+                        <p>Reduce image file size without noticeable quality loss</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">✂️</div>
+                        <h3>Image Cropper</h3>
+                        <p>Crop images to remove unwanted areas or focus on specific parts</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔄</div>
+                        <h3>Image Rotator</h3>
+                        <p>Rotate and flip images in any direction</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🎨</div>
+                        <h3>Image Filters</h3>
+                        <p>Apply beautiful filters and effects to your photos</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🧹</div>
+                        <h3>Background Remover</h3>
+                        <p>Remove backgrounds from images automatically</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">😂</div>
+                        <h3>Meme Generator</h3>
+                        <p>Create funny memes with your own images and text</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🖼️</div>
+                        <h3>Photo Collage Maker</h3>
+                        <p>Combine multiple photos into a single collage</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">💧</div>
+                        <h3>Image Watermark Adder</h3>
+                        <p>Add text or logo watermarks to protect your images</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔍</div>
+                        <h3>Image Metadata Viewer</h3>
+                        <p>View EXIF and other metadata information from images</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">✂️</div>
+                        <h3>Image Splitter</h3>
+                        <p>Split one image into multiple parts</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🧩</div>
+                        <h3>Image Merger</h3>
+                        <p>Merge multiple images into one</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🎨</div>
+                        <h3>Color Picker</h3>
+                        <p>Pick colors from any image and get HEX, RGB values</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔢</div>
+                        <h3>Image to Base64</h3>
+                        <p>Convert images to Base64 encoded strings</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tools-section" id="text-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Text Tools</h2>
+                <p>Manipulate, analyze and convert text with our powerful text tools</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📝</div>
+                        <h3>Word Counter</h3>
+                        <p>Count words, characters, sentences and paragraphs</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔢</div>
+                        <h3>Character Counter</h3>
+                        <p>Count characters with or without spaces</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">➖</div>
+                        <h3>Line Counter</h3>
+                        <p>Count the number of lines in your text</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔄</div>
+                        <h3>Text Case Converter</h3>
+                        <p>Convert between uppercase, lowercase, title case and more</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔙</div>
+                        <h3>Text Reverser</h3>
+                        <p>Reverse text or string order</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔊</div>
+                        <h3>Text to Speech</h3>
+                        <p>Convert text to natural sounding speech</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">✍️</div>
+                        <h3>Lorem Ipsum Generator</h3>
+                        <p>Generate placeholder text for your designs</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📄</div>
+                        <h3>Markdown Preview</h3>
+                        <p>Preview how your Markdown will look when rendered</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔒</div>
+                        <h3>HTML Escape/Unescape</h3>
+                        <p>Convert special characters to HTML entities and vice versa</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🌐</div>
+                        <h3>URL Encode/Decode</h3>
+                        <p>Encode or decode URL strings</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔢</div>
+                        <h3>Base64 Encode/Decode</h3>
+                        <p>Encode and decode Base64 strings</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔄</div>
+                        <h3>Text Diff Checker</h3>
+                        <p>Compare two texts and find differences</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔑</div>
+                        <h3>Password Generator</h3>
+                        <p>Generate strong, secure passwords</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🎲</div>
+                        <h3>Random String Generator</h3>
+                        <p>Generate random strings for various purposes</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">💻</div>
+                        <h3>Text to Binary</h3>
+                        <p>Convert text to binary code and vice versa</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tools-section" id="developer-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Developer Tools</h2>
+                <p>Essential tools for developers to streamline their workflow</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">{} </div>
+                        <h3>JSON Formatter</h3>
+                        <p>Format and validate JSON data with syntax highlighting</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon"><> </div>
+                        <h3>XML Formatter</h3>
+                        <p>Format and validate XML documents</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📊</div>
+                        <h3>SQL Formatter</h3>
+                        <p>Format SQL queries for better readability</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon"><> </div>
+                        <h3>HTML Formatter</h3>
+                        <p>Format and beautify HTML code</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🎨</div>
+                        <h3>CSS Formatter</h3>
+                        <p>Format and beautify CSS code</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📜</div>
+                        <h3>JavaScript Formatter</h3>
+                        <p>Format and beautify JavaScript code</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">.*</div>
+                        <h3>Regex Tester</h3>
+                        <p>Test and debug regular expressions</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🎨</div>
+                        <h3>Color Converter</h3>
+                        <p>Convert between HEX, RGB, HSL and other color formats</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🆔</div>
+                        <h3>UUID Generator</h3>
+                        <p>Generate universally unique identifiers</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">⏱️</div>
+                        <h3>Timestamp Converter</h3>
+                        <p>Convert between timestamps and human-readable dates</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📋</div>
+                        <h3>HTTP Headers Parser</h3>
+                        <p>Parse and analyze HTTP headers</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🤖</div>
+                        <h3>User Agent Parser</h3>
+                        <p>Parse user agent strings to identify browsers and devices</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📱</div>
+                        <h3>QR Code Generator</h3>
+                        <p>Create QR codes for URLs, text, contact info and more</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">👁️</div>
+                        <h3>QR Code Reader</h3>
+                        <p>Decode QR codes from images</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">#️⃣</div>
+                        <h3>Hash Generator</h3>
+                        <p>Generate hashes like MD5, SHA1, SHA256, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔏</div>
+                        <h3>HMAC Generator</h3>
+                        <p>Generate HMAC using various algorithms</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔓</div>
+                        <h3>JWT Decoder</h3>
+                        <p>Decode and verify JSON Web Tokens</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🗜️</div>
+                        <h3>CSS Minifier</h3>
+                        <p>Minify CSS code to reduce file size</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🗜️</div>
+                        <h3>JavaScript Minifier</h3>
+                        <p>Minify JavaScript code to reduce file size</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🗜️</div>
+                        <h3>HTML Minifier</h3>
+                        <p>Minify HTML code to reduce file size</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tools-section" id="seo-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>SEO Tools</h2>
+                <p>Improve your website's search engine visibility with our SEO tools</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🏷️</div>
+                        <h3>Meta Tag Generator</h3>
+                        <p>Generate optimized meta tags for your web pages</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🤖</div>
+                        <h3>Robots.txt Generator</h3>
+                        <p>Create a robots.txt file to control search engine crawlers</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🗺️</div>
+                        <h3>Sitemap Generator</h3>
+                        <p>Generate XML sitemaps for your website</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📊</div>
+                        <h3>Keyword Density Analyzer</h3>
+                        <p>Analyze keyword density in your content</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔗</div>
+                        <h3>Backlink Checker</h3>
+                        <p>Check backlinks pointing to your website</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">⚡</div>
+                        <h3>Website Speed Test</h3>
+                        <p>Test your website loading speed and performance</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔗</div>
+                        <h3>URL Structure Analyzer</h3>
+                        <p>Analyze and optimize your URL structure</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔍</div>
+                        <h3>SERP Preview Tool</h3>
+                        <p>Preview how your page will appear in search results</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🏷️</div>
+                        <h3>Schema Markup Generator</h3>
+                        <p>Generate schema.org markup for rich snippets</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔄</div>
+                        <h3>Canonical URL Checker</h3>
+                        <p>Check canonical URLs to prevent duplicate content issues</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tools-section" id="calculators">
+        <div class="container">
+            <div class="section-title">
+                <h2>Calculators</h2>
+                <p>Various calculators for everyday and specialized needs</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🧮</div>
+                        <h3>Basic Calculator</h3>
+                        <p>Simple calculator for basic arithmetic operations</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔢</div>
+                        <h3>Scientific Calculator</h3>
+                        <p>Advanced calculator with scientific functions</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">⚖️</div>
+                        <h3>BMI Calculator</h3>
+                        <p>Calculate your Body Mass Index</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">💰</div>
+                        <h3>Loan Calculator</h3>
+                        <p>Calculate loan payments, interest and amortization</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🏠</div>
+                        <h3>Mortgage Calculator</h3>
+                        <p>Calculate mortgage payments and affordability</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🎓</div>
+                        <h3>GPA Calculator</h3>
+                        <p>Calculate your Grade Point Average</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">%</div>
+                        <h3>Percentage Calculator</h3>
+                        <p>Calculate percentages, increases and decreases</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">💵</div>
+                        <h3>Tip Calculator</h3>
+                        <p>Calculate tips for restaurants and services</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🎂</div>
+                        <h3>Age Calculator</h3>
+                        <p>Calculate age in years, months and days</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📅</div>
+                        <h3>Date Difference Calculator</h3>
+                        <p>Calculate the difference between two dates</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tools-section" id="unit-converters">
+        <div class="container">
+            <div class="section-title">
+                <h2>Unit Converters</h2>
+                <p>Convert between different units of measurement</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📏</div>
+                        <h3>Length Converter</h3>
+                        <p>Convert between meters, feet, inches, miles, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">⚖️</div>
+                        <h3>Weight Converter</h3>
+                        <p>Convert between kilograms, pounds, ounces, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🌡️</div>
+                        <h3>Temperature Converter</h3>
+                        <p>Convert between Celsius, Fahrenheit and Kelvin</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🏞️</div>
+                        <h3>Area Converter</h3>
+                        <p>Convert between square meters, square feet, acres, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🧪</div>
+                        <h3>Volume Converter</h3>
+                        <p>Convert between liters, gallons, cubic meters, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🏃</div>
+                        <h3>Speed Converter</h3>
+                        <p>Convert between km/h, mph, knots, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">⏱️</div>
+                        <h3>Time Converter</h3>
+                        <p>Convert between seconds, minutes, hours, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">💾</div>
+                        <h3>Data Storage Converter</h3>
+                        <p>Convert between bits, bytes, KB, MB, GB, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">⚡</div>
+                        <h3>Energy Converter</h3>
+                        <p>Convert between joules, calories, watt-hours, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">💨</div>
+                        <h3>Pressure Converter</h3>
+                        <p>Convert between pascals, bars, psi, atm, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔌</div>
+                        <h3>Power Converter</h3>
+                        <p>Convert between watts, horsepower, BTU/h, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📐</div>
+                        <h3>Angle Converter</h3>
+                        <p>Convert between degrees, radians, gradians, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">💱</div>
+                        <h3>Currency Converter</h3>
+                        <p>Convert between world currencies with up-to-date rates</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">⛽</div>
+                        <h3>Fuel Consumption Converter</h3>
+                        <p>Convert between mpg, l/100km, km/l, etc.</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🖥️</div>
+                        <h3>Digital Image Resolution Converter</h3>
+                        <p>Convert between DPI, PPI, pixels, etc.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tools-section" id="other-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Other Useful Tools</h2>
+                <p>Various handy tools for different purposes</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🌐</div>
+                        <h3>IP Address Lookup</h3>
+                        <p>Find information about any IP address</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🔐</div>
+                        <h3>Password Strength Checker</h3>
+                        <p>Check how strong your password is</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📁</div>
+                        <h3>File Size Converter</h3>
+                        <p>Convert between bytes, KB, MB, GB, TB</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📺</div>
+                        <h3>YouTube Thumbnail Downloader</h3>
+                        <p>Download thumbnails from YouTube videos</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🎵</div>
+                        <h3>Video to MP3 Converter</h3>
+                        <p>Extract audio from videos and save as MP3</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📄</div>
+                        <h3>PDF to Text Converter</h3>
+                        <p>Extract text from PDF documents</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📑</div>
+                        <h3>PDF Merger</h3>
+                        <p>Combine multiple PDF files into one</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">✂️</div>
+                        <h3>PDF Splitter</h3>
+                        <p>Split PDF documents into multiple files</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📊</div>
+                        <h3>Barcode Generator</h3>
+                        <p>Create barcodes in various formats</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">📶</div>
+                        <h3>WiFi QR Code Generator</h3>
+                        <p>Create QR codes for WiFi network sharing</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">✉️</div>
+                        <h3>Email Validator</h3>
+                        <p>Check if an email address is valid</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">⌛</div>
+                        <h3>Domain Age Checker</h3>
+                        <p>Check how old a domain name is</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🟢</div>
+                        <h3>Website Status Checker</h3>
+                        <p>Check if a website is online or offline</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🖥️</div>
+                        <h3>MAC Address Lookup</h3>
+                        <p>Find manufacturer details from MAC address</p>
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <a href="#">
+                        <div class="tool-icon">🎨</div>
+                        <h3>ASCII Art Generator</h3>
+                        <p>Convert images or text to ASCII art</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WebTools</h3>
+                    <p>100+ free online tools to make your work easier. No registration required.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#image-tools">Image Tools</a></li>
+                        <li><a href="#text-tools">Text Tools</a></li>
+                        <li><a href="#developer-tools">Developer Tools</a></li>
+                        <li><a href="#seo-tools">SEO Tools</a></li>
+                        <li><a href="#calculators">Calculators</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">DMCA</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 WebTools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple JavaScript to handle category tabs (if you add them later)
+        document.addEventListener('DOMContentLoaded', function() {
+            // This would be used if you implement tab functionality
+            const tabs = document.querySelectorAll('.category-tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active'));
+                    
+                    // You would also switch the corresponding content here
+                });
+            });
+            
+            // Make the first tab active by default
+            if (tabs.length > 0) {
+                tabs[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
